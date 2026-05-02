@@ -24,6 +24,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => res.send('Al Miraal API is Live and Running'));
+
 // Cloudinary configuration
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
