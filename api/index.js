@@ -6,9 +6,9 @@ const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
-const Product = require('./models/Product');
-const CustomizeItem = require('./models/CustomizeItem');
-const Quote = require('./models/Quote');
+const Product = require('../models/Product');
+const CustomizeItem = require('../models/CustomizeItem');
+const Quote = require('../models/Quote');
 
 dotenv.config();
 
