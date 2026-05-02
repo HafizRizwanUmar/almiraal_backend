@@ -6,9 +6,9 @@ const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
-const Product = require('./models/Product');
-const CustomizeItem = require('./models/CustomizeItem');
-const Quote = require('./models/Quote');
+const Product = require('../models/Product');
+const CustomizeItem = require('../models/CustomizeItem');
+const Quote = require('../models/Quote');
 
 dotenv.config();
 
@@ -232,8 +232,8 @@ app.post('/api/quotes', async (req, res) => {
        <hr/>
        <h4>Configuration & Individual Quantities:</h4>
        <p><strong>Bottle:</strong> ${quote.bottleName} (${quote.bottleSize}) - Qty: ${quote.bottleQty}</p>
-       {quote.pumpName && <p><strong>Pump:</strong> ${quote.pumpName} - Qty: ${quote.pumpQty}</p>}
-       {quote.capName && <p><strong>Cap:</strong> ${quote.capName} - Qty: ${quote.capQty}</p>}`
+       ${quote.pumpName ? `<p><strong>Pump:</strong> ${quote.pumpName} - Qty: ${quote.pumpQty}</p>` : ''}
+       ${quote.capName ? `<p><strong>Cap:</strong> ${quote.capName} - Qty: ${quote.capQty}</p>` : ''}`
     );
 
     // Confirmation to User
